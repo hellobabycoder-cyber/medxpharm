@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>병의원-약국 매핑 · 거래처 현황</title>
+<!-- 사내용 내부 도구. 검색엔진에 올라갈 이유가 없다. -->
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root {
+    --navy: #1B2F55;
+    --navy-light: #3C5788;
+    --text: #1F2430;
+    --text-muted: #5C6475;
+    --text-faint: #6B7280;
+    --border: #E3E6EA;
+    --card: #FFFFFF;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont,
+                 'Segoe UI', 'Malgun Gothic', sans-serif;
+    background: var(--navy);
+    color: var(--text);
+    display: flex; align-items: center; justify-content: center;
+    padding: 20px;
+  }
+  .card {
+    width: 100%; max-width: 420px;
+    background: var(--card); border-radius: 14px;
+    padding: 30px 30px 24px;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+  }
+  h1 { margin: 0; font-size: 19px; font-weight: 700; letter-spacing: -0.01em; }
+  .sub { margin: 8px 0 0; font-size: 13px; color: var(--text-muted); line-height: 1.65; }
+  .open {
+    display: block; margin-top: 24px; padding: 13px;
+    text-align: center; text-decoration: none;
+    font-size: 14px; font-weight: 600; color: #fff;
+    background: var(--navy); border-radius: 9px;
+  }
+  .open:hover { background: var(--navy-light); }
+  dl {
+    margin: 24px 0 0; padding-top: 18px; border-top: 1px solid var(--border);
+    display: grid; grid-template-columns: 74px minmax(0, 1fr);
+    gap: 9px 12px; font-size: 12.5px; align-items: baseline;
+  }
+  dt { color: var(--text-faint); }
+  dd { margin: 0; color: var(--text-muted); line-height: 1.6; }
+  .foot {
+    margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--border);
+    font-size: 11.5px; color: var(--text-faint); line-height: 1.65;
+  }
+</style>
+</head>
+<body>
+
+<main class="card">
+  <h1>병의원-약국 매핑 · 거래처 현황</h1>
+  <p class="sub">
+    병의원과 문전약국의 쉐어비율, SAP 거래 구분을 한 화면에서 조회합니다.
+  </p>
+
+  <!-- 주소를 여기 적어 두는 것이 안전한 이유:
+       앱 자체가 ZSDR0900 명부(메일주소 + 사번)로 로그인을 받는다.
+       주소를 안다고 들어갈 수 있는 것이 아니므로 가려 둘 필요가 없다.
+       반대로, 앱의 로그인을 끄면 이 주소도 같이 공개해서는 안 된다. -->
+  <a class="open" id="openLink"
+     href="https://script.google.com/macros/s/AKfycby-LfbWZdcAAPOYqnJEENx7qfSx75DSR-sGt2-sxk0s5o2sK_5lPjB5uttkk9g_46td/exec">
+    열기
+  </a>
+
+  <dl>
+    <dt>로그인</dt>
+    <dd>SAP ZSDR0900에 등록된 <b>메일주소 + 사번</b></dd>
+    <dt>명부 갱신</dt>
+    <dd>매일 00시 (VPN이 꺼져 있으면 평일 아침에 다시 시도)</dd>
+    <dt>거래 구분</dt>
+    <dd>SAP ZSDR0140·ZSDR0035 기준, 매일 21:30 갱신</dd>
+  </dl>
+
+  <p class="foot">
+    사내 업무용 시스템입니다. 화면의 거래처 정보를 외부로 내보내지 마세요.<br>
+    열람 권한·오류 문의: 영업기획팀 박기양
+  </p>
+</main>
+
+</body>
+</html>
